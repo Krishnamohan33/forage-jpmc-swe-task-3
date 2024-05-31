@@ -2,12 +2,15 @@ export interface Order {
   price: number,
   size: number,
 }
-export interface ServerRespond {
-  stock: string,
-  top_bid: Order,
-  top_ask: Order,
+export interface Row {
+  price_abc: number,
+  price_def: number,
+  ratio: number,
   timestamp: Date,
-}
+  upper_bound:number,
+  lower_bound: number,
+  trigger_alert: number | undefined,
+  }
 
 class DataStreamer {
   static API_URL: string = 'http://localhost:8080/query?id=1';
